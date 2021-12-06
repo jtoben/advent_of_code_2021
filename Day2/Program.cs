@@ -14,22 +14,22 @@
             PartTwo(commands);
         }
 
-        private static void PartOne(IEnumerable<(string Instruction, int Amount)> commands)
+        private static void PartOne(IEnumerable<(string instruction, int amount)> commands)
         {
             int horizontal = 0;
             int depth = 0;
 
-            foreach (var command in commands) {
-                switch (command.Instruction)
+            foreach (var (instruction, amount) in commands) {
+                switch (instruction)
                 {
                     case "forward":
-                        horizontal += command.Amount;
+                        horizontal += amount;
                         break;
                     case "down":
-                        depth += command.Amount;
+                        depth += amount;
                         break;
                     case "up":
-                        depth -= command.Amount;
+                        depth -= amount;
                         break;
                 }
             }
@@ -37,25 +37,25 @@
             Console.WriteLine(horizontal * depth);
         }
 
-        private static void PartTwo(IEnumerable<(string Instruction, int Amount)> commands)
+        private static void PartTwo(IEnumerable<(string instruction, int amount)> commands)
         {
             int horizontal = 0;
             int aim = 0;
             int depth = 0;
 
-            foreach (var command in commands) { 
+            foreach (var (instruction, amount) in commands) { 
 
-                switch (command.Instruction)
+                switch (instruction)
                 {
                     case "forward":
-                        horizontal += command.Amount;
-                        depth += command.Amount * aim;
+                        horizontal += amount;
+                        depth += amount * aim;
                         break;
                     case "down":
-                        aim += command.Amount;
+                        aim += amount;
                         break;
                     case "up":
-                        aim -= command.Amount;
+                        aim -= amount;
                         break;
                 }
             }
