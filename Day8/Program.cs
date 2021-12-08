@@ -55,10 +55,10 @@
             {
                 var firstPart = value.Split(" | ")[0].Split(' ').ToList();
 
-                var digitOne = firstPart.First(x => x.Length == 2);
-                var digitSeven = firstPart.First(x => x.Length == 3);
-                var digitFour = firstPart.First(x => x.Length == 4);
-                var digitEight = firstPart.First(x => x.Length == 7);
+                var digitOne = firstPart.Single(x => x.Length == 2);
+                var digitSeven = firstPart.Single(x => x.Length == 3);
+                var digitFour = firstPart.Single(x => x.Length == 4);
+                var digitEight = firstPart.Single(x => x.Length == 7);
 
                 var digitsWithLengthFive = firstPart.Where(x => x.Length == 5).ToList();
 
@@ -76,14 +76,14 @@
 
                 var workingCopy = overlappingCharachters.ToArray();
 
-                var sideThree = workingCopy.First(digitFour.Contains);
+                var sideThree = workingCopy.Single(digitFour.Contains);
                 workingCopy = workingCopy.Where(x => x != sideThree).ToArray();
-                var sideSix = workingCopy.First(x => !digitSeven.Contains(x));
-                var sideZero = workingCopy.First(x => x != sideSix);
+                var sideSix = workingCopy.Single(x => !digitSeven.Contains(x));
+                var sideZero = workingCopy.Single(x => x != sideSix);
 
-                var digitNine = firstPart.First(x => x.Length == 6 && x.Contains(sideThree) && x.Contains(digitOne[0]) && x.Contains(digitOne[1]));
-                var digitZero = firstPart.First(x => x.Length == 6 && !x.Contains(sideThree));
-                var digitSix = firstPart.First(x => x.Length == 6 && x != digitNine && x != digitZero);
+                var digitNine = firstPart.Single(x => x.Length == 6 && x.Contains(sideThree) && x.Contains(digitOne[0]) && x.Contains(digitOne[1]));
+                var digitZero = firstPart.Single(x => x.Length == 6 && !x.Contains(sideThree));
+                var digitSix = firstPart.Single(x => x.Length == 6 && x != digitNine && x != digitZero);
 
                 var digitThree = "";
                 foreach (var digit in digitsWithLengthFive)
