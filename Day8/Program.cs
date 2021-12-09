@@ -41,11 +41,11 @@
             // Of the other 2 sides, 1 is not found in digit 7.
             // This is side 6.
             // The last one is thus side 0.
-            // Of digits 2,3,5, one has 2 unique numbers that are also found in digit 1.
-            // This is digit 3.
             // Digit 9 has a length of 6, with side 3, and all of the sides of digit 1.
             // Digit 0 has a length of 6, but not side 3.
             // Digit 6 is the last remaining digit of length 6.
+            // Of digits 2,3,5, one has 2 unique numbers that are also found in digit 1.
+            // This is digit 3.
             // Digit 5 is length 5, where all of its sides are also in digit 6.
             // Finally, digit 2 is the last remaining length 5
 
