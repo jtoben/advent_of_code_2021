@@ -58,9 +58,7 @@
                 basinSizes.Add(basinSize);
             }
 
-            basinSizes.Sort();
-            basinSizes.Reverse();
-            Console.WriteLine(basinSizes.Take(3).Aggregate((a, b) => a * b));
+            Console.WriteLine(basinSizes.OrderByDescending(x => x).Take(3).Aggregate((a, b) => a * b));
         }
 
         private static List<(int x, int y)> GetNeighbours(int[,] heightMap, (int x, int y) position)
